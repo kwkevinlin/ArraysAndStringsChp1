@@ -42,7 +42,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Eclipse files
+# Custom Added for Eclipse files
 .metadata/
 RemoteSystemsTempFiles/
 *.cproject
