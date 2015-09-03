@@ -7,12 +7,13 @@ int main () {
 
 	/*
 	 * Question: Implement an algorithm to determine if a string has all unique characters.
-	 * What if you cannot use additional data structures?
+	 * 			 What if you cannot use additional data structures?
 	 *
-	 * Solution: Hash character ASCII index to corresponding location in array. ie: 'a' = 97 in ASCII, so [97]++;
-	 * If [index] > 1, then there is a repeat.
+	 * Solution: Hash character ASCII index to corresponding location in array. ie: if character = 'a',
+	 * 			 'a' = 97 in ASCII, so arr[97]++;
+	 * 			 If [any index] > 1, then break and cout. There is a repeat in the string.
 	 *
-	 * Complexity: O(n) due to the loop
+	 * Complexity: O(n) due to the for loop
 	 */
 
 	string sample = "abcdefghijklmnopqrstuwxyz"; //All unique
