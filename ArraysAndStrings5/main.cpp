@@ -17,13 +17,17 @@ int main () {
  * Solution: Loop through string input, and check if [i+1] == [i]. If equal, increment repeat[i]
  * 			 because it is the same character (ie: aa).
  *
- * Complexity: As of now (return not implemented), complexity is O(n).
+ * Complexity: If string concatenation is O(n^2) complexity, then this solution -- limited by
+ * 			   string concatenation, will also be O(n^2).
  */
 
-	//string sample = "aabcccccaaa";
-	string sample = "abeccfddcc";
+	string sample = "aabcccccaaa";
+	//string sample = "abeccfddcc";
+	//string sample = "abc";
 
-	compress(sample);
+	string result = compress(sample);
+
+	cout << result;
 
 }
 
@@ -44,22 +48,28 @@ string compress(string str) {
 			else
 				break;
 		}
-		//cout << str[i] << repeat[i];
+		//For every distinct letter
 		count++;
 		i = j - 1;
 	}
-
+	string temp;
+	string toReturn;
 	//This part could probably be a little more efficient. Combined into function above.
-	if (count > str.length())
-		cout << str;
-	else {
-		//This print has bug. Not as accurate as one above.
-		//To do: Above, store (using to_string) via concatenate to new string, then compare
-		//and print that instead.
-		for (i = 0; i < str.length(); i++)
-			cout << str[i] << repeat[i];
+	if (str.length() < count*2) { //Every letter (count) has 2 elements: "c2" (char and repeats)
+		cout << "Returning original string:\n";
+		return str;
 	}
-	cout << endl;
+	else {
+		for (i = 0; i < str.length(); i++) {
+			temp = str[i] + to_string(repeat[i]);
+			toReturn = toReturn + temp;
+			cout << str[i] << repeat[i];
+			//if (repeat[i] > 1) //To print
+			//	i = i + repeat[i]-1; //Same as i = j - 1 above, so ie: c3 and not c1 c1 c1
+		}
+		cout << endl;
+		return toReturn;
+	}
 
 }
 
