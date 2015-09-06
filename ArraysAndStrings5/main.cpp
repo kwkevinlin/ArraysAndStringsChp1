@@ -19,6 +19,8 @@ int main () {
  *
  * Complexity: If string concatenation is O(n^2) complexity, then this solution -- limited by
  * 			   string concatenation, will also be O(n^2).
+ *
+ * Notice:   This solution requires C++11. Line 66: to_string()
  */
 
 	string sample = "aabcccccaaa";
